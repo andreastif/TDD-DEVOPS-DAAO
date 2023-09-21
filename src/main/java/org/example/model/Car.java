@@ -10,6 +10,8 @@ public class Car {
     private String model;
     private boolean hazardlights;
 
+    private int currentSpeed;
+
     public Car() {
     }
 
@@ -77,5 +79,13 @@ public class Car {
 
     public boolean isHazardLights() {
         return hazardlights;
+    }
+
+    public int getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public void setCurrentSpeed(int i) {
+        this.currentSpeed = i;
     }
 }

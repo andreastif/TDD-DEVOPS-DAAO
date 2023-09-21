@@ -86,5 +86,13 @@ public class CarTest {
         assertThat(car.isHazardLights()).isTrue();
     }
 
+    @Test
+    public void checkThatSpeedCanIncrease() {
+        var initialSpeed = car.getCurrentSpeed();
+        car.setCurrentSpeed(50);
+        var changedSpeed = car.getCurrentSpeed();
+        assertThat(initialSpeed).isLessThan(changedSpeed);
+    }
+
 
 }
