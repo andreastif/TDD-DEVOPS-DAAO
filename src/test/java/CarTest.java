@@ -1,5 +1,6 @@
 
 import org.example.model.Car;
+import org.example.model.Gear;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -109,12 +110,15 @@ public class CarTest {
         assertThat(currentSpeed).isEqualTo(0);
     }
 
-//    @Test
-//    public void checkThatCarCanReverse() {
-//        car.decreaseSpeed(20);
-//        var currentSpeed = car.getCurrentSpeed();
-//        assertThat(currentSpeed).isLessThan(0);
-//    }
+
+
+    @Test
+    public void checkThatCarIsInDrive(){
+        car.setGear(Gear.DRIVE);
+        assertThat(car.getGear())
+                .isNotNull()
+                .isEqualTo(Gear.DRIVE);
+    }
 
 
 }

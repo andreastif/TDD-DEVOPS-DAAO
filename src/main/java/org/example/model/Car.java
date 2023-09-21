@@ -7,12 +7,23 @@ public class Car {
     private boolean lowBeam;
     private boolean backLights;
     private boolean ignition;
+    private boolean hazardLights;
+    private boolean brakeLights;
     private String model;
-    private boolean hazardlights;
-
     private int currentSpeed;
+    private Gear gear;
+
+
 
     public Car() {
+    }
+
+    public Gear getGear() {
+        return gear;
+    }
+
+    public void setGear(Gear gear) {
+        this.gear = gear;
     }
 
     public boolean isHeadlights() {
@@ -63,6 +74,14 @@ public class Car {
         return ignition;
     }
 
+    public boolean isBrakeLights() {
+        return brakeLights;
+    }
+
+    public void setBrakeLights(boolean brakeLights) {
+        this.brakeLights = brakeLights;
+    }
+
     public void turnOffLights(boolean ignitionIsTrue) {
         if (!ignitionIsTrue) {
             this.headlights = false;
@@ -74,11 +93,11 @@ public class Car {
     }
 
     public void setHazardLights(boolean b) {
-        this.hazardlights = b;
+        this.hazardLights = b;
     }
 
     public boolean isHazardLights() {
-        return hazardlights;
+        return hazardLights;
     }
 
     public int getCurrentSpeed() {
