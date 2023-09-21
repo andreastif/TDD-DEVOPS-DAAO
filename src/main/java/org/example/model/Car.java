@@ -85,7 +85,17 @@ public class Car {
         return currentSpeed;
     }
 
-    public void setCurrentSpeed(int i) {
-        this.currentSpeed = i;
+    public void throttle(int i) {
+        this.currentSpeed += Math.min(i, 180);
     }
+
+    public void decreaseSpeed(int i) {
+        if (currentSpeed - i < 0) {
+            this.currentSpeed = 0;
+        } else {
+        this.currentSpeed -= i;
+        }
+    }
+
+
 }

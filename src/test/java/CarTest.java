@@ -89,10 +89,32 @@ public class CarTest {
     @Test
     public void checkThatSpeedCanIncrease() {
         var initialSpeed = car.getCurrentSpeed();
-        car.setCurrentSpeed(50);
+        car.throttle(50);
         var changedSpeed = car.getCurrentSpeed();
         assertThat(initialSpeed).isLessThan(changedSpeed);
     }
+
+    @Test
+    public void checkThatSpeedCantGoAbove180() {
+        car.throttle(99999);
+        var maxSpeed = car.getCurrentSpeed();
+        assertThat(maxSpeed).isEqualTo(180);
+    }
+
+    @Test
+    public void checkThatCarCanStop() {
+        car.throttle(99999);
+        car.decreaseSpeed(180);
+        var currentSpeed = car.getCurrentSpeed();
+        assertThat(currentSpeed).isEqualTo(0);
+    }
+
+//    @Test
+//    public void checkThatCarCanReverse() {
+//        car.decreaseSpeed(20);
+//        var currentSpeed = car.getCurrentSpeed();
+//        assertThat(currentSpeed).isLessThan(0);
+//    }
 
 
 }
