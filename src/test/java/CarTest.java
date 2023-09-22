@@ -135,7 +135,6 @@ public class CarTest {
         assertThat(car.getLightSystem().isBrakeLights()).isTrue();
     }
 
-
     @Test
     public void testThatCarCanBrakeInReverse() {
         car.setGear(Gear.REVERSE);
@@ -143,5 +142,6 @@ public class CarTest {
         car.brake(20);
         assertThat(car.getCurrentSpeed()).isEqualTo(0);
     }
+
 
 }
