@@ -17,6 +17,9 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Setup Gradle & Test App
         uses: gradle/gradle-build-action@v2
         with:
