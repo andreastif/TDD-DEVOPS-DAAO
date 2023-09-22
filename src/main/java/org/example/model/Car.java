@@ -68,7 +68,7 @@ public class Car {
 
     public void throttle(int i) {
 
-        if (battery.getCharge() == 0) {
+        if (battery.getCharge() < 16) {
             System.out.println("Slut på batteri :'(");
         } else {
             for (int j = 0; j < 15; j ++) {

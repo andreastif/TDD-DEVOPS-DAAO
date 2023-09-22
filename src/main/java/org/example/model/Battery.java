@@ -28,5 +28,16 @@ public class Battery {
 
     public void expendCharge() {
         this.charge -= 1;
+        if (this.charge < 0) {
+            this.charge = 0;
+        }
+        batteryShutDownProcedure();
     }
+
+    public void batteryShutDownProcedure() {
+        if (this.charge <= 1) {
+            car.turnOffLights(false);
+        }
+    }
+
 }

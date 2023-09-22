@@ -4,7 +4,9 @@ import org.example.model.Gear;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 
 public class CarTest {
@@ -157,21 +159,35 @@ public class CarTest {
         car.getLightSystem().setLowBeam(true);
         car.getLightSystem().setHighBeam(true);
         car.getLightSystem().setBrakeLights(true);
-        car.getLightSystem().setHeadlights(true);
         car.getLightSystem().setBackLights(true);
 
-        assertThat(car.getBattery().getCharge()).isEqualTo(994);
+        assertThat(car.getBattery().getCharge()).isEqualTo(995);
     }
 
 
     @Test
     public void testThatCarCantThrottleWhenNoCharge() {
-        car.getBattery().setCharge(0);
+        car.getBattery().setCharge(14);
         car.throttle(20);
 
         assertThat(car.getCurrentSpeed()).isEqualTo(0);
     }
 
+    @Test
+    public void testThatBatteryShutDownProcedureTurnsOffTheLights() {
+        car.getBattery().setCharge(2);
+        car.getBattery().expendCharge();
+        car.getLightSystem().setHazardLights(true);
 
+        assertAll(
+                () -> assertThat(car.getLightSystem().isHeadlights()).isFalse(),
+                () -> assertThat(car.getLightSystem().isBackLights()).isFalse(),
+                () -> assertThat(car.getLightSystem().isLowBeam()).isFalse(),
+                () -> assertThat(car.getLightSystem().isBrakeLights()).isFalse(),
+                () -> assertThat(car.getLightSystem().isHighBeam()).isFalse()
+        );
+
+        assertThat(car.getLightSystem().isHazardLights()).isTrue();
+    }
 
 }
