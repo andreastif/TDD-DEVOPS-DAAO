@@ -144,10 +144,20 @@ public class CarTest {
     }
 
     @Test
-    public void testThatBatteryChargeIs95() {
+    public void testThatBatteryChargeIs985() {
         car.setGear(Gear.DRIVE);
         car.throttle(15);
 
-        assertThat(car.getBattery().getCharge()).isEqualTo(95);
+        assertThat(car.getBattery().getCharge()).isEqualTo(985);
     }
+
+    @Test
+    public void testThatLightsExpendCharge() {
+        car.getLightSystem().setHeadlights(true);
+        car.getLightSystem().setLowBeam(true);
+        car.getLightSystem().setHighBeam(true);
+
+        assertThat(car.getBattery().getCharge()).isEqualTo(997);
+    }
+
 }

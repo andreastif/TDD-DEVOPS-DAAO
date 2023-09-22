@@ -3,8 +3,8 @@ package org.example.model;
 public class Car {
 
 
-    LightSystem lightSystem = new LightSystem();
-    Battery battery = new Battery();
+    LightSystem lightSystem;
+    Battery battery;
     private boolean ignition;
 
     private String model;
@@ -14,6 +14,8 @@ public class Car {
 
 
     public Car() {
+        this.battery = new Battery(this);
+        this.lightSystem = new LightSystem(this);
     }
 
     public Gear getGear() {
@@ -66,7 +68,7 @@ public class Car {
 
     public void throttle(int i) {
 
-        for (int j = 0; j < 5; j ++) {
+        for (int j = 0; j < 15; j ++) {
             battery.expendCharge();
         }
 

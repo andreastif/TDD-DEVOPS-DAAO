@@ -2,14 +2,20 @@ package org.example.model;
 
 public class Battery {
 
+    private final Car car;
     private int charge;
 
 
 
 
 
-    public Battery() {
-        this.charge = 100;
+    public Battery(Car car) {
+        this.car = car;
+        this.charge = 1000;
+    }
+
+    public Car getCar() {
+        return car;
     }
 
     public int getCharge() {

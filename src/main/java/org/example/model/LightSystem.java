@@ -2,6 +2,7 @@ package org.example.model;
 
 public class LightSystem {
 
+    private final Car car;
     private boolean headlights;
     private boolean highBeam;
     private boolean lowBeam;
@@ -9,7 +10,8 @@ public class LightSystem {
     private boolean hazardLights;
     private boolean brakeLights;
 
-    public LightSystem() {
+    public LightSystem(Car car) {
+        this.car = car;
     }
 
     public boolean isHeadlights() {
@@ -18,6 +20,9 @@ public class LightSystem {
 
     public void setHeadlights(boolean headlights) {
         this.headlights = headlights;
+        if (headlights) {
+            car.getBattery().expendCharge();
+        }
     }
 
     public boolean isHighBeam() {
@@ -26,6 +31,9 @@ public class LightSystem {
 
     public void setHighBeam(boolean highBeam) {
         this.highBeam = highBeam;
+        if (highBeam) {
+            car.getBattery().expendCharge();
+        }
     }
 
     public boolean isLowBeam() {
@@ -34,6 +42,9 @@ public class LightSystem {
 
     public void setLowBeam(boolean lowBeam) {
         this.lowBeam = lowBeam;
+        if (lowBeam) {
+            car.getBattery().expendCharge();
+        }
     }
 
     public boolean isBackLights() {
@@ -42,14 +53,21 @@ public class LightSystem {
 
     public void setBackLights(boolean backLights) {
         this.backLights = backLights;
+        if (backLights) {
+            car.getBattery().expendCharge();
+        }
     }
 
     public boolean isHazardLights() {
         return hazardLights;
+
     }
 
     public void setHazardLights(boolean hazardLights) {
         this.hazardLights = hazardLights;
+        if (hazardLights) {
+            car.getBattery().expendCharge();
+        }
     }
 
     public boolean isBrakeLights() {
@@ -58,5 +76,12 @@ public class LightSystem {
 
     public void setBrakeLights(boolean brakeLights) {
         this.brakeLights = brakeLights;
+        if (brakeLights) {
+            car.getBattery().expendCharge();
+        }
+    }
+
+    public Car getCar() {
+        return car;
     }
 }
