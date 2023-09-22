@@ -163,4 +163,15 @@ public class CarTest {
         assertThat(car.getBattery().getCharge()).isEqualTo(994);
     }
 
+
+    @Test
+    public void testThatCarCantThrottleWhenNoCharge() {
+        car.getBattery().setCharge(0);
+        car.throttle(20);
+
+        assertThat(car.getCurrentSpeed()).isEqualTo(0);
+    }
+
+
+
 }

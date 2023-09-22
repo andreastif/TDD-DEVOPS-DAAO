@@ -68,14 +68,18 @@ public class Car {
 
     public void throttle(int i) {
 
-        for (int j = 0; j < 15; j ++) {
-            battery.expendCharge();
-        }
-
-        if (this.gear == Gear.DRIVE) {
-            this.currentSpeed += Math.min(i, 180);
+        if (battery.getCharge() == 0) {
+            System.out.println("Slut på batteri :'(");
         } else {
-            this.currentSpeed += Math.min(i, 20);
+            for (int j = 0; j < 15; j ++) {
+                battery.expendCharge();
+            }
+
+            if (this.gear == Gear.DRIVE) {
+                this.currentSpeed += Math.min(i, 180);
+            } else {
+                this.currentSpeed += Math.min(i, 20);
+            }
         }
 
     }
