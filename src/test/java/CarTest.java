@@ -13,7 +13,6 @@ public class CarTest {
     @BeforeEach
     public void setup() {
         car = new Car();
-
     }
 
 
@@ -27,45 +26,51 @@ public class CarTest {
     @Test
     public void checkThatCarHasNoNullProperties() {
         car.setModel("Lada");
+        car.setGear(Gear.DRIVE);
         assertThat(car).hasNoNullFieldsOrProperties();
     }
 
 
     @Test
     public void checkThatCarHasPropertyHeadlightsOn() {
-        assertThat(car.isHeadlights()).isFalse();
+        assertThat(car.getLightSystem().isHeadlights()).isFalse();
     }
 
     @Test
     public void checkThatCarCanTurnOnLights() {
-        car.setHeadlights(true);
-        assertThat(car.isHeadlights()).isTrue();
+        car.getLightSystem().setHeadlights(true);
+
+        assertThat(car.getLightSystem().isHeadlights()).isTrue();
     }
+
+
+
 
     @Test
     public void checkThatCarCanTurnOffLights() {
-        car.setHeadlights(false);
-        assertThat(car.isHeadlights()).isFalse();
+
+        car.getLightSystem().setHeadlights(false);
+        assertThat(car.getLightSystem().isHeadlights()).isFalse();
     }
+
+
 
     @Test
     public void checkThatCarHasHighBeam() {
-        car.setHighBeam(true);
-        assertThat(car.isHighBeam()).isTrue();
+        car.getLightSystem().setHighBeam(true);
+        assertThat(car.getLightSystem().isHighBeam()).isTrue();
     }
 
     @Test
     public void checkThatCarHasLowBeam() {
-        car.setLowBeam(true);
-        assertThat(car.isLowBeam()).isTrue();
+        car.getLightSystem().setLowBeam(true);
+        assertThat(car.getLightSystem().isLowBeam()).isTrue();
     }
-
     @Test
     public void checkThatCarHasBackLights() {
-        car.setBackLights(true);
-        assertThat(car.isBackLights()).isTrue();
+        car.getLightSystem().setBackLights(true);
+        assertThat(car.getLightSystem().isBackLights()).isTrue();
     }
-
     @Test
     public void checkThatEngineIsOn() {
         car.setIgnition(true);
@@ -75,17 +80,18 @@ public class CarTest {
     @Test
     public void checkAllLightsAreOff() {
         car.turnOffLights(car.isIgnition());
-        assertThat(car.isLowBeam()).isFalse();
-        assertThat(car.isBackLights()).isFalse();
-        assertThat(car.isHighBeam()).isFalse();
-        assertThat(car.isHeadlights()).isFalse();
+        assertThat(car.getLightSystem().isLowBeam()).isFalse();
+        assertThat(car.getLightSystem().isBackLights()).isFalse();
+        assertThat(car.getLightSystem().isHighBeam()).isFalse();
+        assertThat(car.getLightSystem().isHeadlights()).isFalse();
     }
 
     @Test
     public void checkThatHazardLightsWorkWhileEngineIsOff() {
-        car.setHazardLights(true);
-        assertThat(car.isHazardLights()).isTrue();
+        car.getLightSystem().setHazardLights(true);
+        assertThat(car.getLightSystem().isHazardLights()).isTrue();
     }
+
 
     @Test
     public void checkThatSpeedCanIncrease() {
@@ -125,7 +131,10 @@ public class CarTest {
     public void testThatWhenCarBrakesTheBrakeLightTurnsOn() {
         car.brake(20);
 
-        assertThat(car.isBrakeLights()).isTrue();
+        assertThat(car.getLightSystem().isBrakeLights()).isTrue();
     }
+
+
+
 
 }
