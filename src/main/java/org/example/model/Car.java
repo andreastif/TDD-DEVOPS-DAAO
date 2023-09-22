@@ -3,7 +3,7 @@ package org.example.model;
 public class Car {
 
     LightSystem lightSystem;
-    Battery battery;
+    private Battery battery;
     private boolean ignition;
 
     private String model;

@@ -197,9 +197,15 @@ public class CarTest {
     @Test
     public void testThatBatteryCanBeCharged() {
         car.getBattery().setCharge(500);
-        charger.charge(car.getBattery(),200);
+        charger.charge(car.getBattery());
         assertThat(car.getBattery().getCharge()).isEqualTo(200);
     }
 
+    @Test
+    public void testThatCarsCanBeAddedToCharger() {
+        charger.setCar(car);
+
+        assertThat(charger.getCar()).isNotNull();
+    }
 
 }
