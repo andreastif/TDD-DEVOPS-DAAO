@@ -2,7 +2,6 @@ package org.example.model;
 
 public class Car {
 
-
     LightSystem lightSystem;
     Battery battery;
     private boolean ignition;
@@ -10,7 +9,6 @@ public class Car {
     private String model;
     private int currentSpeed;
     private Gear gear;
-
 
 
     public Car() {
@@ -28,7 +26,6 @@ public class Car {
         }
 
     }
-
 
 
     public String getModel() {
@@ -59,7 +56,6 @@ public class Car {
             this.ignition = false;
         }
     }
-
 
 
     public int getCurrentSpeed() {

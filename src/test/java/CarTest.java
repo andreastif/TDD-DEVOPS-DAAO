@@ -46,15 +46,12 @@ public class CarTest {
     }
 
 
-
-
     @Test
     public void checkThatCarCanTurnOffLights() {
 
         car.getLightSystem().setHeadlights(false);
         assertThat(car.getLightSystem().isHeadlights()).isFalse();
     }
-
 
 
     @Test
@@ -94,7 +91,6 @@ public class CarTest {
         assertThat(car.getLightSystem().isHazardLights()).isTrue();
     }
 
-
     @Test
     public void checkThatSpeedCanIncrease() {
         var initialSpeed = car.getCurrentSpeed();
@@ -120,7 +116,6 @@ public class CarTest {
     }
 
 
-
     @Test
     public void checkThatCarIsInDrive(){
         car.setGear(Gear.DRIVE);
@@ -128,7 +123,6 @@ public class CarTest {
                 .isNotNull()
                 .isEqualTo(Gear.DRIVE);
     }
-
 
     @Test
     public void testThatWhenCarBrakesTheBrakeLightTurnsOn() {
@@ -163,7 +157,6 @@ public class CarTest {
 
         assertThat(car.getBattery().getCharge()).isEqualTo(995);
     }
-
 
     @Test
     public void testThatCarCantThrottleWhenNoCharge() {

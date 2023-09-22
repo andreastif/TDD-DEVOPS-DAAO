@@ -7,8 +7,6 @@ public class Battery {
 
 
 
-
-
     public Battery(Car car) {
         this.car = car;
         this.charge = 1000;
