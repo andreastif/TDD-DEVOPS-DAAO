@@ -1,0 +1,23 @@
+#  Continuous Integration (CI) workflow that builds and tests code whenever changes are pushed to any branch.
+
+name: run-all-tests
+on: [push]
+
+jobs:
+  testapp:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+
+      - name: Setup Gradle & Test App
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test # kommer köra gradle test - comment test
