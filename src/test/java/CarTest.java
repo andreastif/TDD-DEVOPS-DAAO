@@ -12,10 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class CarTest {
     Car car;
+    Charger charger;
 
     @BeforeEach
     public void setup() {
         car = new Car();
+        charger = new Charger();
     }
 
 
@@ -188,8 +190,16 @@ public class CarTest {
     @Test
     public void testThatChargerCanBeInstantiated() {
         Charger charger = new Charger();
-
         assertThat(charger).isNotNull();
     }
+
+
+    @Test
+    public void testThatBatteryCanBeCharged() {
+        car.getBattery().setCharge(500);
+        charger.charge(car.getBattery(),200);
+        assertThat(car.getBattery().getCharge()).isEqualTo(200);
+    }
+
 
 }
