@@ -20,7 +20,10 @@ public class Car {
     }
 
     public void setGear(Gear gear) {
-        this.gear = gear;
+        if (currentSpeed == 0) {
+            this.gear = gear;
+        }
+
     }
 
 
@@ -61,7 +64,12 @@ public class Car {
     }
 
     public void throttle(int i) {
-        this.currentSpeed += Math.min(i, 180);
+        if (this.gear == Gear.DRIVE) {
+            this.currentSpeed += Math.min(i, 180);
+        } else {
+            this.currentSpeed += Math.min(i, 20);
+        }
+
     }
 
     public void brake(int i) {

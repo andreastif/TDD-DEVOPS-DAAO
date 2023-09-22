@@ -103,6 +103,7 @@ public class CarTest {
 
     @Test
     public void checkThatSpeedCantGoAbove180() {
+        car.setGear(Gear.DRIVE);
         car.throttle(99999);
         var maxSpeed = car.getCurrentSpeed();
         assertThat(maxSpeed).isEqualTo(180);
@@ -135,6 +136,12 @@ public class CarTest {
     }
 
 
-
+    @Test
+    public void testThatCarCanBrakeInReverse() {
+        car.setGear(Gear.REVERSE);
+        car.throttle(20);
+        car.brake(20);
+        assertThat(car.getCurrentSpeed()).isEqualTo(0);
+    }
 
 }
