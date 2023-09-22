@@ -105,7 +105,7 @@ public class CarTest {
     @Test
     public void checkThatCarCanStop() {
         car.throttle(99999);
-        car.decreaseSpeed(180);
+        car.brake(180);
         var currentSpeed = car.getCurrentSpeed();
         assertThat(currentSpeed).isEqualTo(0);
     }
@@ -120,5 +120,12 @@ public class CarTest {
                 .isEqualTo(Gear.DRIVE);
     }
 
+
+    @Test
+    public void testThatWhenCarBrakesTheBrakeLightTurnsOn() {
+        car.brake(20);
+
+        assertThat(car.isBrakeLights()).isTrue();
+    }
 
 }

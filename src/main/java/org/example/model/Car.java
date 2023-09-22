@@ -108,12 +108,16 @@ public class Car {
         this.currentSpeed += Math.min(i, 180);
     }
 
-    public void decreaseSpeed(int i) {
+    public void brake(int i) {
+
+        this.brakeLights = true;
+
         if (currentSpeed - i < 0) {
             this.currentSpeed = 0;
         } else {
         this.currentSpeed -= i;
         }
+
     }
 
 
