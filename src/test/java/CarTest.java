@@ -1,5 +1,6 @@
 
 import org.example.model.Car;
+import org.example.model.Charger;
 import org.example.model.Gear;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -181,6 +182,14 @@ public class CarTest {
         );
 
         assertThat(car.getLightSystem().isHazardLights()).isTrue();
+    }
+
+
+    @Test
+    public void testThatChargerCanBeInstantiated() {
+        Charger charger = new Charger();
+
+        assertThat(charger).isNotNull();
     }
 
 }
