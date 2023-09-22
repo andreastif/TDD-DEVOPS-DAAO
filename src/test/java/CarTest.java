@@ -213,8 +213,18 @@ public class CarTest {
     public void testThatIterationReturnsCorrectly() {
         car.getBattery().setCharge(100);
         charger.setCar(car);
-        var iterations = charger.charge();
-        assertThat(iterations).isEqualTo(90);
+        var receipt = charger.charge();
+        assertThat(receipt.iterations()).isEqualTo(90);
+    }
+
+
+    @Test
+    public void testThatCostOfChargeIsPrinted() {
+        car.getBattery().setCharge(100);
+        charger.setCar(car);
+        var receipt = charger.charge();
+
+        assertThat(receipt.cost()).isEqualTo(9000);
     }
 
 }

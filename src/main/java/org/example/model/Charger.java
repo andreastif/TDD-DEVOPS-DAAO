@@ -10,7 +10,7 @@ public class Charger {
     }
 
 
-    public int charge() {
+    public Receipt charge() {
        int iteration = (1000 - car.getBattery().getCharge()) / 10;
        for (int i = 0; i < iteration; i++) {
            car.getBattery().setCharge(car.getBattery().getCharge() + 10);
@@ -20,8 +20,7 @@ public class Charger {
            iteration += 1;
        }
 
-
-       return iteration;
+       return new Receipt((iteration * 100), iteration);
     }
 
 
