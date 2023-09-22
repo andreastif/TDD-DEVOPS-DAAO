@@ -17,8 +17,9 @@ public class Charger {
        }
        if (car.getBattery().getCharge() >= 991 && car.getBattery().getCharge() < 1000) {
            car.getBattery().setCharge(1000);
+           iteration += 1;
        }
-       iteration += 1;
+
 
        return iteration;
     }

@@ -196,9 +196,10 @@ public class CarTest {
 
     @Test
     public void testThatBatteryCanBeCharged() {
+        charger.setCar(car);
         car.getBattery().setCharge(500);
-        charger.charge(car.getBattery());
-        assertThat(car.getBattery().getCharge()).isEqualTo(200);
+        charger.charge();
+        assertThat(car.getBattery().getCharge()).isEqualTo(1000);
     }
 
     @Test
@@ -206,6 +207,14 @@ public class CarTest {
         charger.setCar(car);
 
         assertThat(charger.getCar()).isNotNull();
+    }
+
+    @Test
+    public void testThatIterationReturnsCorrectly() {
+        car.getBattery().setCharge(100);
+        charger.setCar(car);
+        var iterations = charger.charge();
+        assertThat(iterations).isEqualTo(90);
     }
 
 }
