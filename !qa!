@@ -1,0 +1,80 @@
+[33mcommit 12a1cfa491efeb5dbd33bdae764f2bd41c1e1544[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 10:54:50 2023 +0200
+
+    Iteration: 19
+
+[33mcommit b4db41cd859389f5b8814e8b791ae83711cc35ed[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 10:32:08 2023 +0200
+
+    Iteration: 18 DONE!!!!
+
+[33mcommit 20bab6c78e54d1a789c06fdc8d3c12ac85f51047[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 10:14:58 2023 +0200
+
+    Iteration 17 done!
+
+[33mcommit 7d1b08862126e25f90cc77354ebd36d6e762ca3a[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 10:14:33 2023 +0200
+
+    Iteration 17 done!
+
+[33mcommit 140b622398c9db9b3bfde44d23716c27122381c2[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 10:12:27 2023 +0200
+
+    Iteration 16 done!
+
+[33mcommit e32e6d9978efbcf5dca842f1b10d6ab201a334cb[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 09:55:56 2023 +0200
+
+    Refactored all lights into a new class LightSystem.java
+
+[33mcommit 5e11b7c125e088ae521fd9c3152a75a0b2ca713e[m
+Author: dafe2201 <Daniel_fellden@hotmail.com>
+Date:   Fri Sep 22 09:35:54 2023 +0200
+
+    iteration: 15 finito!
+
+[33mcommit ebda9e1f4a5c96594d0aeda2bd2690502a95e854[m
+Author: andreastif <45339645+andreastif@users.noreply.github.com>
+Date:   Thu Sep 21 14:55:05 2023 +0200
+
+    iteration 14 done
+
+[33mcommit 09284e31bf028e2c9ec699aa9fe5efb8df587394[m
+Author: andreastif <45339645+andreastif@users.noreply.github.com>
+Date:   Thu Sep 21 14:46:57 2023 +0200
+
+    iteration 13 finito
+
+[33mcommit 4cd2c60e8cedbb9230b0ad6cbb8c17af65c40df6[m
+Author: andreastif <45339645+andreastif@users.noreply.github.com>
+Date:   Thu Sep 21 14:20:37 2023 +0200
+
+    implemented iteration 9
+
+[33mcommit 08262c7a16dc60ca7deea2bd9785ccb6db04dbe8[m
+Author: andreastif <45339645+andreastif@users.noreply.github.com>
+Date:   Thu Sep 21 14:10:22 2023 +0200
+
+    - Gruppnamn: Grupp DAAO
+    - Medlemmar:
+        D.F
+        O.J
+        A.B
+        A.T
+    
+        Commit message:
+    
+    Added POJO Car, and the first tests...
+
+[33mcommit 565a8a153b8a336f1bbbf3d0e817baac3ef26c9c[m
+Author: andreastif <45339645+andreastif@users.noreply.github.com>
+Date:   Thu Sep 21 12:46:27 2023 +0200
+
+    first commit

@@ -156,8 +156,11 @@ public class CarTest {
         car.getLightSystem().setHeadlights(true);
         car.getLightSystem().setLowBeam(true);
         car.getLightSystem().setHighBeam(true);
+        car.getLightSystem().setBrakeLights(true);
+        car.getLightSystem().setHeadlights(true);
+        car.getLightSystem().setBackLights(true);
 
-        assertThat(car.getBattery().getCharge()).isEqualTo(997);
+        assertThat(car.getBattery().getCharge()).isEqualTo(994);
     }
 
 }
