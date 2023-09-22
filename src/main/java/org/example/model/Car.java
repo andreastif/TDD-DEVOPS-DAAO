@@ -65,6 +65,11 @@ public class Car {
     }
 
     public void throttle(int i) {
+
+        for (int j = 0; j < 5; j ++) {
+            battery.expendCharge();
+        }
+
         if (this.gear == Gear.DRIVE) {
             this.currentSpeed += Math.min(i, 180);
         } else {
@@ -91,6 +96,10 @@ public class Car {
 
     public void setLightSystem(LightSystem lightSystem) {
         this.lightSystem = lightSystem;
+    }
+
+    public Battery getBattery() {
+        return battery;
     }
 
 }

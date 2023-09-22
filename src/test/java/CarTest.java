@@ -143,5 +143,11 @@ public class CarTest {
         assertThat(car.getCurrentSpeed()).isEqualTo(0);
     }
 
+    @Test
+    public void testThatBatteryChargeIs95() {
+        car.setGear(Gear.DRIVE);
+        car.throttle(15);
 
+        assertThat(car.getBattery().getCharge()).isEqualTo(95);
+    }
 }
