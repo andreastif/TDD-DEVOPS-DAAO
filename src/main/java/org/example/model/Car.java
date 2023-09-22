@@ -4,6 +4,7 @@ public class Car {
 
 
     LightSystem lightSystem = new LightSystem();
+    Battery battery = new Battery();
     private boolean ignition;
 
     private String model;
